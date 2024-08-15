@@ -1,22 +1,25 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
-function App() {
+const devName = `Sai Kiran`
+
+function App(prop) {
+    const [username, setUsername] = useState('');
+
+    // const Change=(e)=>{
+    //     setUsername(e.target.value);
+    // }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>
+          Hello, {username ? username : 'World'}!
+        </h1>
+          <main>
+            <input className="NameInput" type="text" value={username} placeholder={'Enter your name!'} onChange={e => setUsername(e.target.value)} />
+        </main>
       </header>
     </div>
   );
